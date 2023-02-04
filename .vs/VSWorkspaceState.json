@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\config",
+    "\\src",
+    "\\src\\Controller",
+    "\\src\\Controller\\Admin",
+    "\\src\\DataFixtures",
+    "\\src\\Entity",
+    "\\src\\Form",
+    "\\templates",
+    "\\templates\\admin"
+  ],
+  "SelectedNode": "\\config\\bundles.php",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les évenements {% endblock %}
+
+
+{% block body %}
+{% for message in app.flashes ('success') %}
+<div class="alert alert-success">
+{{ message }}
+</div>
+{% endfor %}
+<div class="container mt-4">
+<h1> gerer les evenements  </h1>
+<table class ="table table-striped">
+<thead>
+<tr>
+<th>Titre</th>
+<th>Action</th>
+</thead>
+<tbody>
+
+{% for property  in events %}
+<tr>
+<td> {{property.getNomEvent}} </td>
+<td>
+
+<a href="{{ path('admin.property.edit' , {id: property.getId}) }}" class="btn btn-secondary"> Editer </a>
+<form action="{{ path('admin.property.delete' , {id: property.getId}) }}" style="display: inline-block" onsubmit="return confirm('Etes vous sure ?')" >
+<button class="btn btn-danger">Supprimer</button>
+
+</form>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<div class="text-right">
+<a href="{{ path('admin.property.new')}}" class="btn btn-primary">Créer un nouveau evenement </a>
+<a href="{{ path('logout')}}" class="btn btn-danger">Logout </a>
+</div>
+
+
+
+</div>
+{% endblock %}
+
+

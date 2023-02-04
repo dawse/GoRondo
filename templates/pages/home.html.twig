@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="jumbotron text-center">
+<h1> home </h1>
+</div>
+<div class="container">
+</div>
+<div class="container">
+<h2>Les deniers evenements </h2>
+<div class="row flex">
+{% for property  in event %}
+<div class="col-3">
+<div class="card">
+{% if property.filename %}
+<img src="/images/event/{{ property.filename }}" alt="card-img-top" style="width: 100%; height: auto;">
+{% else %}
+<img src="/images/event/download.png{{ property.filename }}" alt="card-img-top" style="width: 100%; height: auto;">
+{% endif %}
+<div class="card-body">
+<h5 class="card-title">
+<a href="{{ path('property.show'  , { id:property.id, slug: property.slug }  ) }}"> {{property.getNomEvent}} </a>
+</h5>
+<p class="card-text">{{property.getLieuxEvent}} ({{property.getCategorieEvent}}) </p>
+<div class="text-primary" style="font-weight: bold;font-size:2rem;">{{property.getPrixEvent}} DT</div>
+</div>
+</div>
+</div>
+
+
+{% endfor %}
+</div>
+
+</div>
+{% endblock %}
+
+

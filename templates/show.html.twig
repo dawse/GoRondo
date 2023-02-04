@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+
+{% if property.filename %}
+<img src="/images/event/{{ property.filename  }}" alt="card-img-top" style="width: 30%; height:auto;">
+{% else %}
+<img src="/images/event/download.png{{ property.filename  }}" alt="card-img-top" style="width: 30%; height: auto;">
+{% endif %}
+
+<div class="col-md-8">
+</div>
+<div class="col-md-4">
+<h1>{{property.getNomEvent}}</h1>
+<h2>{{property.getLieuxEvent}} ({{property.getCategorieEvent}}) </h2>
+<div class="text-primary" style="font-size: 4rem;font-weight: bold; ">{{property.getPrixEvent}} DT</div>
+
+<div class="text-right">
+
+
+
+
+</div>
+</div>
+
+</div>
+
+ <div class="row">
+ <div class="col-md-8">
+ <table class="table table-striped">
+ <br>
+    <h5>Description</h5>
+  <tr>
+  <td>Nom de l'événement</td>
+  <td>{{property.getNomEvent}} </td>
+  </tr>
+ <tr>
+ <td>Lieux de l'événement</td>
+ <td>{{property.getLieuxEvent}} </td>
+ </tr>
+ <tr>
+ <td> Categorie de l'événement  </td>
+ <td> {{property.getCategorieEvent}} </td>
+ </tr>
+  <tr>
+  <td> Nombre de participants  </td>
+  <td> {{property.getNbrAddr}} </td>
+  </tr>
+    <tr>
+    <td> Prix de l'événement  </td>
+    <td> {{property.getPrixEvent}} DT </td>
+    </tr>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}

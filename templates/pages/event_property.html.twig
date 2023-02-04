@@ -1,0 +1,18 @@
+<div class="card mb-4">
+{% if Event.filename %}
+<img src="/images/event/{{ Event.filename }}" alt="card-img-top" style="width: 100%; height: auto;">
+{% else %}
+<img src="/images/event/download.png{{ Event.filename }}" alt="card-img-top" style="width: 100%; height: auto;">
+{% endif %}
+<div class="card-body">
+<h5 class="card-title">
+<a href="{{ path('property.show'  , { id:Event.id, slug: Event.slug }  ) }}"> {{Event.getNomEvent}} </a>
+</h5>
+</h5>
+<p class="card-text"> {{ Event.getLieuxEvent }} ({{Event.getCategorieEvent}})</p>
+<div class="text-primary" style="font-size:2rem; font-weight:bold;">
+{{Event.getPrixEvent}} DT
+
+</div>
+</div>
+</div>

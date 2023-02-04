@@ -1,0 +1,18 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
+event:
+  path: /event
+  controller: App\Controller\EventController::index
+event_d:
+  path: /event_details
+  controller: App\Controller\EventDetailsController::index
+
+logout:
+  path: /logout
+
+

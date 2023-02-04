@@ -1,0 +1,34 @@
+security:
+
+    providers:
+        form_database:
+            entity:
+                class: App\Entity\User
+                property: username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+
+            logout:
+                path: /logout
+                target: /
+
+
+            form_login:
+                check_path: login
+          #  http_basic: true
+
+
+
+
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+
+    encoders:
+        App\Entity\User: plaintext
